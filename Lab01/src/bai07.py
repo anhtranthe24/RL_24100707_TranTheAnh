@@ -1,0 +1,13 @@
+import gymnasium as gym
+env = gym.make("CartPole-v1")
+obs, info = env.reset(seed=42)
+print(f"State before action: {obs}")
+action = env.action_space.sample()
+print(f"Action: {action}")
+next_obs, reward, terminated, truncated, info = env.step(action)
+print(f"State after action: {next_obs}")
+print(f"Reward: {reward}")
+print(f"Terminated: {terminated}")
+print(f"Truncated: {truncated}")
+print(f"Info: {info}")
+env.close()
